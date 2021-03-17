@@ -4,12 +4,13 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include <random>
 #include <chrono>
 #include <functional>
 
 
+typedef std::pair<std::string, double> pair_t;
+
+
 auto input(const std::string &) -> std::string;
-auto gen_rand_vec(long int, int, int) -> std::vector<int>;
-auto print_result(const std::vector<std::pair<std::string, double>> &) -> void;
-auto test_algorithm(std::vector<int>, std::function<void(std::vector<int> &)>) -> double;
+auto print_result(const std::vector<pair_t> &) -> void;
+auto test_algorithm(std::function<void()>) -> double;

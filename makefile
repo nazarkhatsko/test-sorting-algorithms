@@ -1,62 +1,59 @@
-# name project
-TAG = tsa
+# project name
+TAG := tsa
 
-# name compiler
-CC = g++
+# compiler name
+CC := g++
 
-# source parametres
-SRCS  = main.cpp
-SRCS += tools.cpp
-SRCS += algorithms.cpp
+# source
+SRC := main.cpp
+SRC += tools.cpp
+SRC += algorithms.cpp
 
-# flag parametres
-CFLAGS  = -Wall
-CFLAGS += -std=c++11
+# include
+INC := -I.
 
+# library
+LIB := -lpthread
+
+# flag
+CFLAG := -Wall
+CFLAG += -std=c++11
+CFLAG += -stdlib=libc++
 
 # mode list
 .PHONY: release release-thread debug debug-thread clean
 
-
 # release mode
 release: build/release/$(TAG)
 
-build/release/$(TAG): $(SRCS)
+build/release/$(TAG): $(SRC)
 	@echo "[RELEASE]"
-	@mkdir -p build/
-	@mkdir -p build/release/
-	@$(CC) $(CFLAGS) $^ -o $@
-
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAG) $(INC) $(LIB) -O3 $^ -o $@
 
 # release-thread mode
 release-thread: build/release-thread/$(TAG)
 
-build/release-thread/$(TAG): $(SRCS:main.cpp=main_thread.cpp)
+build/release-thread/$(TAG): $(SRC:main.cpp=main_thread.cpp)
 	@echo "[RELEASE-THREAD]"
-	@mkdir -p build/
-	@mkdir -p build/release-thread/
-	@$(CC) $(CFLAGS) -lpthread $^ -o $@
-
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAG) $(INC) $(LIB) -O3 $^ -o $@
 
 # debug mode
 debug: build/debug/$(TAG)
 
-build/debug/$(TAG): $(SRCS)
+build/debug/$(TAG): $(SRC)
 	@echo "[DEBUG]"
-	@mkdir -p build/
-	@mkdir -p build/debug/
-	@$(CC) $(CFLAGS) -g $^ -o $@
-
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAG) $(INC) $(LIB) -g $^ -o $@
 
 # debug-thread mode
 debug-thread: build/debug-thread/$(TAG)
 
-build/debug-thread/$(TAG): $(SRCS:main.cpp=main_thread.cpp)
+build/debug-thread/$(TAG): $(SRC:main.cpp=main_thread.cpp)
 	@echo "[DEBUG-THREAD]"
-	@mkdir -p build/
-	@mkdir -p build/debug-thread/
-	@$(CC) $(CFLAGS) -lpthread -g $^ -o $@
-
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAG) $(INC) $(LIB) -g $^ -o $@
 
 # clean mode
 clean:
