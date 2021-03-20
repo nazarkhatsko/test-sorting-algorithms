@@ -1,4 +1,5 @@
 TSA (Test Sort Algorithm)
+Version 1.1 (CLI)
 
 test of the most popular sorting algorithms
 the collection includes the following algorithms:
@@ -13,9 +14,9 @@ the collection includes the following algorithms:
 
 to compile and run a standard assembly:
 	make release
-	./build/release/tsa
+	./build/release/tsa_cli
 
 
 to compile and run an accelerated build:
 	make release-thread
-	./build/release-thread/tsa
+	./build/release-thread/tsa_cli

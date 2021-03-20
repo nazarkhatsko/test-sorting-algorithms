@@ -6,11 +6,10 @@ CC := g++
 
 # source
 SRC := main.cpp
-SRC += tools.cpp
-SRC += algorithms.cpp
+SRC += $(wildcard source/*.cpp)
 
 # include
-INC := -I.
+INC := -Iinclude/
 
 # library
 LIB := -lpthread
