@@ -28,7 +28,7 @@ auto main() -> int {
 	std::cout << std::fixed;
 
 	std::cout << "TSA (Test Sort Algorithm)" << '\n';
-	std::cout << "Version 1.1 (CLI)" << '\n';
+	std::cout << "Version 1.1" << '\n';
 	std::cout << '\n';
 
 	auto size = std::stol(input("enter size: "));
