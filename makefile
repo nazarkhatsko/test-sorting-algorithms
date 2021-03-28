@@ -28,7 +28,7 @@ release: build/release/$(TAG)
 build/release/$(TAG): $(SRC)
 	@echo "[RELEASE]"
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAG) $(INC) $(LIB) -O3 $^ -o $@
+	@$(CC) $(CFLAG) $(INC) -O3 $^ -o $@
 
 # release-thread mode
 release-thread: build/release-thread/$(TAG)
@@ -44,7 +44,7 @@ debug: build/debug/$(TAG)
 build/debug/$(TAG): $(SRC)
 	@echo "[DEBUG]"
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAG) $(INC) $(LIB) -g $^ -o $@
+	@$(CC) $(CFLAG) $(INC) -g $^ -o $@
 
 # debug-thread mode
 debug-thread: build/debug-thread/$(TAG)
@@ -57,4 +57,4 @@ build/debug-thread/$(TAG): $(SRC:main.cpp=main_thread.cpp)
 # clean mode
 clean:
 	@echo "[CLEAN]"
-	@rm -r build/
+	@rm -r -f build/

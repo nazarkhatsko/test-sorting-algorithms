@@ -1,4 +1,4 @@
-TSA (Test Sort Algorithm)
+TSA (Test Sorting Algorithms)
 Version 1.1
 
 test of the most popular sorting algorithms
@@ -8,7 +8,6 @@ the collection includes the following algorithms:
 	- insertion sort
 	- merge sort
 	- quick sort
-	- counting sort
 	- shell sort
 
 

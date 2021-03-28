@@ -8,9 +8,9 @@
 #include <functional>
 
 
-typedef std::pair<std::string, double> pair_t;
+using pair_t = std::pair<std::string, double>;
 
 
-auto input(const std::string &) -> std::string;
-auto print_result(const std::vector<pair_t> &) -> void;
-auto test_algorithm(std::function<void()>) -> double;
+std::string input(const std::string &);
+void print_result(const std::vector<pair_t> &);
+double test_algorithm(std::function<void()>);
