@@ -1,4 +1,4 @@
-#TSA (Test Sorting Algorithms)
+# TSA (Test Sorting Algorithms)
 **Version 1.2**
 
 Test of the most popular sorting algorithms the collection includes the following algorithms:
@@ -9,7 +9,7 @@ Test of the most popular sorting algorithms the collection includes the followin
 * quick sort
 * shell sort
 
-###Compiling
+### Compiling
 To compile and run a program:
 ```
 git clone https://github.com/nkhatsko/test-sorting-algorithms
