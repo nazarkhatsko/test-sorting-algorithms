@@ -14,7 +14,7 @@ double wrapper_for_thread(std::function<void(arr_t &, comp_t)> f, const arr_t &a
 int main() {
     std::cout << std::fixed;
     std::cout << "TSA (Test Sorting Algorithms)\n";
-    std::cout << "Version 1.2\n";
+    std::cout << "Version 1.2 (threads)\n";
     std::cout << "\n";
 
     const auto size       = std::stoi(input("Enter size: "));
